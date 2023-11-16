@@ -27,6 +27,8 @@ gem 'stimulus-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
+# dotenv for environment variables
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -45,6 +47,16 @@ gem 'bootsnap', require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
+#stripe gem
+gem 'stripe'
+
+#bootsrtap-sass 
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
+gem 'bootstrap-sass-extras', '~> 0.0.2'
+gem 'devise', '~> 4.9', '>= 4.9.3'
+gem 'simple_form'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
