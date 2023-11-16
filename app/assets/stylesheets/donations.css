@@ -1,0 +1,24 @@
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+
+}
+/* .field {
+    background-color: rgb(150, 96, 20);
+} */
+#donation-form .field label[for="donation_first_name"]{
+    background-color: bisque;
+}
+#donation-form .field label[for="donation_last_name"]{
+    background-color: bisque;
+}
+
+#donation-form .field label[for="donation_email"]{
+    background-color: bisque;
+}
+
+#donation-form .field label[for="donation_amount"]{
+    background-color: bisque;
+}
