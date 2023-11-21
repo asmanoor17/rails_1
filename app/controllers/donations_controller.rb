@@ -7,7 +7,7 @@ class DonationsController < ApplicationController
 
         #charge the user's card
          charge = Stripe::Charge.create({
-            amount: @donation.amount*100,
+            amount: @donation.amount * 100,
             currency: 'usd',
             source: params[:stripe_token],
             description: 'Donation',

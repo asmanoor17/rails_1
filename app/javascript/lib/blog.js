@@ -19,13 +19,32 @@ $(function(){
 }); 
 //dynamic content loading for comments
 $('#load-comments').on('click',function(){
-    const url = '/categories/3/articles/18/comments';
+    const categoryId = $('#category-id').data ('category');
+    const articleId = $('#load-comments').data('article');
+    console.log(categoryId)
+    const url = `/categories/${categoryId}/articles/${articleId}/comments`;
     console.log($.getJSON(url));
     $.getJSON(url,function(data){
         console.log(data);
+        //Append the new comments to the container #comments
+        data.forEach(function(comment) {
+            $('#comments').append('<div>' + "user " + comment.commenter + '</div>');
+            $('#comments').append('<div>' + comment.body + '</div>');
+        });
+   
+      
+        
+
 
     })
+  
     // console.log($.getJSON(`/categories/${category_id}/articles/${article_id}/comments`));
+    
+      //add .fail callback
+
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        console.error("Error fetching comments:", textStatus, errorThrown);
+      });
 
 });
 

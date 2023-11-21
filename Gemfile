@@ -50,6 +50,9 @@ gem 'bootsnap', require: false
 #stripe gem
 gem 'stripe'
 
+#standard webpack
+gem 'webpacker'
+
 #bootsrtap-sass 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
