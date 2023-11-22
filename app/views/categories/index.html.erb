@@ -1,18 +1,43 @@
-<!-- app/views/categories/index.html.erb -->
-<h1>Categories</h1>
-<ul>
-  <% @categories.each do |category| %>
-    <li>
-      <h2>
-        <%= "#{category.name} (#{category.articles.size} articles)" %>
-      </h2>
-      <% if category.description.present? %>
-        <p><em>No description available!</em></p>
-      <% else %>
-        <p>Click the link to view your current articles!</p>
-      <% end %>
-      <%= link_to 'View Articles', category_articles_path(category) %>
-    </li>
-  <% end %>
-</ul>
+<% if user_signed_in? %>
+  <div>Welcome <%= current_user.username %></div>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+
+  <h1>Categories</h1>
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <h2>
+          <%= "#{category.name} (#{category.articles.size} articles)" %>
+        </h2>
+        <% if category.description.present? %>
+          <p><em>No description available!</em></p>
+        <% else %>
+          <p>Click the link to view your current articles!</p>
+        <% end %>
+        <%= link_to 'View Articles', category_articles_path(category) %>
+      </li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %>
+
+  <h1>Categories</h1>
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <h2>
+          <%= "#{category.name} (#{category.articles.size} articles)" %>
+        </h2>
+        <% if category.description.present? %>
+          <p><em>No description available!</em></p>
+        <% else %>
+          <p>Click the link to view your current articles!</p>
+        <% end %>
+        <%= link_to 'View Articles', category_articles_path(category) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 
