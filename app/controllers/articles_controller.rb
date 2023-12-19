@@ -6,7 +6,8 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.all 
+    @recent_articles = Article.recent_articles
   end
 
   def show

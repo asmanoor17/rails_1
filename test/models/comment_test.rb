@@ -3,7 +3,8 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+test "belongs to artcile association" do 
+  comment = Comment.new
+  assert_not_nil comment.artcile, "Comment does not have an associated article "
+end 
 end
