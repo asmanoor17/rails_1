@@ -1,7 +1,12 @@
 require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+ 
+  test "user is not valid without first_name" do
+    user = User.new(
+      last_name: "Doe",
+      username: "john_doe"
+    )
+    
+end 
 end
