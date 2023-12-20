@@ -2,7 +2,7 @@ require "test_helper"
 
 class CategoryTest < ActiveSupport::TestCase
         setup do
-          @category = categories(:one) # assuming you have fixture data with at least one category
+          @category = categories(:one)
         end
       
         test "should get index" do
